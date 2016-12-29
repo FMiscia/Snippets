@@ -1,0 +1,43 @@
+/* rules an id tag */
+#tag_id {
+
+}
+
+/* rules a class */
+.tag_class {
+
+}
+
+/* rules .tag_class wherever inside .parent */
+.parent .tag_class{
+
+
+}
+
+/*example*/
+
+/* image dialog min width and height. 
+ * !important: ovewrite every rules (don't use it, if you can) */
+#image_dialog {
+        min-width: 500px; min-height: 500px !important;
+}
+
+/* rules every image under the id #image_dialog */
+#image_dialog .img {
+        height:100%; width: 100%;
+}
+
+/* rules every element under .ui-dialog class with
+ * the .ui-dialog-content class. Moreover those rules are 
+ * applied only if .hold class is included 
+ *
+ * <div class="ui-dialog>
+ *      <div class="ui-dialog-content hold"></div>
+ *</div>
+ */
+.ui-dialog .ui-dialog-content.hold { 
+        background-image: url('/assets/hold.gif');
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+}

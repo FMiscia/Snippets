@@ -1,0 +1,55 @@
+<head>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>  
+<body>
+	<div id="graph"></div>
+</body>
+<script>
+var N = 100;
+
+function randomArray() {
+        var out = new Array(N);
+        for(var i = 0; i < N; i++) {
+                out[i] = Math.random();
+        }
+        return out;
+}
+
+var x = randomArray(),
+    y = randomArray(),
+    z = randomArray();
+
+var r = [],
+    g = [],
+    b = [],
+    color = []
+
+for(var i=0; i<N; i=i+1){
+    var sum = x[i]+y[i]+z[i]
+    r.push(x[i]/sum*255)
+    g.push(y[i]/sum*255)
+    b.push(z[i]/sum*255)
+    color.push("rgb("+parseInt(r[i])+","+parseInt(g[i])+","+parseInt(b[i])+")")
+}
+
+
+Plotly.plot('graph',
+                [{
+                        type: 'scatter3d',
+                        mode: 'markers',
+                        x: x,
+                        y: y,
+                        z: z,
+                        marker: { 
+                                size: 10,
+                                opacity: 0.7, 
+                                color: color
+                        }
+                }],
+                [
+                'resetCameraDefault3d', 
+                'hoverClosest3d'
+                ]
+           );
+</script>
+

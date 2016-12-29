@@ -1,0 +1,52 @@
+<!--
+ Polymer web component
+ -->
+<link rel="import" href="/vendors/polymer/polymer.html>
+
+<dom-module id="component">
+        <template>
+                <style></style>
+                <div id="component-box"></div>
+        </template>
+        <script>
+                Polymer({
+                        is: 'component' /*dom-module id*/
+
+                         /*
+                         when the element is created but
+                         properties not initialized 
+                         and the element is not yet 
+                         attached to the DOM
+                         */
+                        created: function(){}
+
+                        /*
+                        when the properties and the local dom
+                        are initialized
+                        */
+                        ready: function(){}
+
+                        /*
+                        when the elemente is attached to the DOM.
+                        Called for sure after ready, but it can be called
+                        multiple times during the lifecycle
+                        */
+                        attached: functoin(){}
+
+                        /*
+                        when the element is detached from the DOM.
+                        It can bel called multiple times during the lifecycle
+                        */
+                        detached: function(){}
+
+                        /*
+                        when an element's attribute change
+                        */
+                        attributeChanged: function(){}
+
+                })
+        </script>
+
+</dom-module>
+                                
+
